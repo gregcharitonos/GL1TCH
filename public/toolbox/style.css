@@ -1,0 +1,138 @@
+:root {
+  font-size: 18px;
+  --main-grad: linear-gradient(45deg,#a03ac6,#398dba);
+  --back-pos: 0px 0px;
+  --shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.42);
+}
+body {
+  margin:0;
+  font-family: monospace;
+  background: #050915;
+}
+
+#background {
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+#main {
+  width:100vw;
+  height:100vh;
+  z-index: 1000;
+}
+
+.view {
+  display: none;
+  width:100vw;
+  min-height: 100vh;
+  align-content: space-around;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.current.view {
+  display: grid;
+}
+
+form {
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: 1vh;
+  place-items:center;
+  place-content:center;
+}
+
+input {
+  height:6vh;
+  width:70vw;
+  font-size: 1rem;
+}
+
+button {
+  border:none;
+  border-radius: 5px;
+  min-width:20vw;
+  min-height: 3vh;
+  background-color: #d6d6c1;
+  color:black;
+  box-shadow:var(--shadow);
+  text-transform: lowercase;
+  font-family: inherit;
+  font-size: 1.2rem;
+  margin-top: 2vh;
+}
+
+a[href^=javascript]{
+  color:#222;
+}
+
+
+#exploitList > button {
+  width:80vw;
+  height: 20vh;
+  background-image: none;
+  background-color: hsl(224, 71%, 19%);
+  box-shadow: 0 2px 0px 3px hsla(224, 71%, 16%, 0.65);
+  text-transform: uppercase;
+  color:white;
+  font-size: 1.5rem;
+}
+
+.view.exploit {
+  color:black;
+  background: hsl(39, 10%, 43%);
+  justify-items:center;
+  display: fixed;
+  top:0;
+  left:0;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  align-items: center;
+  grid-row-gap: 2vh;
+}
+
+.view.exploit .title {
+  color:black;
+  font-size: 1.5rem;
+}
+
+.view.exploit > .block {
+  display: grid;
+  place-items:center;
+}
+
+.view.exploit img {
+  max-width: 90vw;
+  max-height: 75vh;
+}
+.view.exploit video {
+  max-width: 90vw;
+  max-height: 75vh;
+}
+
+.quote {
+  font-size: 0.8rem;
+  color:#000000;
+  padding: 1vh 1vw;
+  background: #d6d6c1;
+  width:90vw;
+  border:2px solid black;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+}
+
+.quote::after {
+  content:"\0020\2012\0020" attr(data-author);
+  font-style: italic;
+}
+
+p {
+  padding: 2vh 2vw;
+}
+
+textarea {
+  width:75vw;
+  min-height: 20vmin;
+}

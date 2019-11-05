@@ -1,0 +1,207 @@
+:root {
+  font-size: 18px;
+  --main-grad: linear-gradient(45deg,#a03ac6,#398dba);
+  --back-pos: 0px 0px;
+  --shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.42);
+}
+body {
+  margin:0;
+}
+
+#main {
+  width:100vw;
+  height:100vh;
+  background:#ccc;
+  display: grid;
+}
+
+.view {
+  display: none;
+  width:100vw;
+  height: 100vh;
+  place-items:center;
+  place-content:center;
+}
+
+.current.view {
+  display: grid;
+}
+
+form {
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: 1vh;
+  place-items:center;
+  place-content:center;
+}
+
+input {
+  height:6vh;
+  width:70vw;
+  font-size: 1rem;
+}
+
+button {
+  border:none;
+  border-radius: 5px;
+  min-width:30vw;
+  min-height: 5vh;
+  background-image: linear-gradient(90deg,#a03ac6,#398dba);
+  background-size: 300% 300%;
+  background-position: var(--back-pos);
+  color:white;
+  box-shadow:var(--shadow);
+  text-transform: lowercase;
+}
+
+a{
+  margin-top: 2vh;
+  color:#222;
+}
+
+textarea {
+  width:100%;
+  min-height: 10vh;
+}
+
+#menu {
+  align-content: space-around;
+}
+
+#menu button {
+  width:70vw;
+  height:20vh;
+  font-size: 1.5rem;
+}
+
+#userList {
+  height:80vh;
+  width:80vw;
+  display:grid;
+  justify-content: center;
+  overflow-y: auto;
+  grid-row-gap: 1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+#userList > span {
+  height:7vh;
+  width:75vw;
+  display: grid;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  grid-auto-flow: row;
+  text-align: center;
+  place-content:center;
+}
+
+#userList > span > .name {
+  font-size: 1.1rem;
+}
+#userList > span > .bio {
+  color:#5f5f5f;
+  grid-area: bio
+}
+#userList > span > button {
+  grid-area: button;
+  min-width: 0;
+  min-height: 0;
+  width:10vmin;
+  height:10vmin;
+  border-radius: 100%;
+}
+
+#msgs {
+  background: #28816d;
+}
+
+#texts {
+  justify-items:center;
+  align-items:stretch;
+  align-content: stretch;
+  justify-content: center;
+}
+
+#msgHeader {
+  display: grid;
+  text-align: center;
+  grid-auto-flow: column;
+  align-items: center;
+  height: 5vh;
+  width:80vw;
+  grid-template-areas: "recName recName recName givePoints";
+  margin-top: 1vh;
+}
+
+#msgName {
+  grid-area: recName;
+}
+
+#givePoints {
+  display: grid;
+  width:5vh;
+  height:5vh;
+  border-radius: 100%;
+  box-shadow: var(--shadow);
+  background: hsl(0,50%,50%);
+  color: white;
+  place-content:center;
+  grid-area: givePoints;
+}
+
+#messages {
+  padding-top: 1vh;
+  height:70vh;
+  width:85vw;
+  background: white;
+  overflow-y: auto;
+}
+
+#messages img {
+  max-width: 40vw;
+  max-height: 40vh;
+}
+
+#send {
+  min-width: 10vw;
+  min-height: 10vw;
+  border-radius: 10px;
+  margin-bottom: 2vh;
+}
+
+#inputs {
+  display: grid;
+  grid-auto-flow: column;
+  place-content:center;
+  justify-content: space-around;
+  margin-top: 2vh;
+  column-gap: 2vw;
+}
+
+input[name=msg] {
+  width:70vw;
+  height:11vw;
+}
+
+.msg {
+  border:1px solid black;
+  width:50%;
+  min-height: 4vh;
+  float:left;
+  margin-top: 1vh
+}
+
+.msg::before {
+  content:attr(data-displayName)":";
+  opacity: 0.5;
+  padding-right: 1vw;
+}
+.msg.me {
+  float:right;
+}
+
+.msg.me::before {
+  display: none;
+}

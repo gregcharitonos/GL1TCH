@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="/manifest.json">
+    <title>CHATAPP - GL1TCH</title>
+    <link rel="stylesheet" href="/chatapp/style.css">
+    <script src="/chatapp/script.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <div id="menu" class="current view">
+        <button onclick="showView('myprofile')">edit profile</button>
+        <button onclick="showView('users')">send message</button>
+        <a href="/toolbox" target="_blank"><button>toolbox</button></a>
+      </div>
+      <div id="myprofile" class="view">
+        <form id="bioform">
+          <div>points: <span id="points"></span></div>
+          <label>display name</label>
+          <input name="displayName" placeholder="display name">
+          <label>bio</label>
+          <textarea name="bio" placeholder="bio"></textarea>
+          <button onclick="uploadBio()">save</button>
+        </form>
+        <a href="javascript:void(0);" onclick="showView('menu')">back to menu</a> 
+      </div>
+      <div id="users" class="view">
+        <div id="userList">
+        </div>
+        <a href="javascript:void(0);" onclick="showView('menu')">back to menu</a> 
+      </div>
+      
+      <div id="texts" class="view">
+        <div id="msgHeader"><div id="msgName"></div><div id="givePoints" onclick="givePoints(recipient)">+1</div></div>
+        <div id="messages">
+        </div>
+        <div id="inputs">
+          <input name="msg"><button id="send" onclick="sendMsg()">></button>
+        </div>
+        <a href="javascript:void(0);" onclick="showView('users')">back to list</a>
+      </div>
+    </div>
+  </body>
+</html>
