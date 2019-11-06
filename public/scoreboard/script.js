@@ -44,8 +44,8 @@ init = function(){
   function updateScores(){
     fetch("/users").then(res=>res.json()).then(users=>{
       scoreList.innerHTML = "";
-      users.sort((a)=>{
-        a.points > b.point? -1 : 1;
+      users.sort((a,b)=>{
+        return a.points > b.points? -1 : 1;
       });
       for(var i=0; i<users.length; i++){
         var u = document.createElement("li");
