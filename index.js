@@ -1,6 +1,6 @@
 /*
   Greg Charitonos
-  05/11/19 (remember remember)
+  05/11/19
   Built For: Science Communication Class, Block 1
 */
 
